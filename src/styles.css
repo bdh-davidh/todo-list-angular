@@ -1,0 +1,263 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+button {
+  margin: 0;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+/* Adjust line heights */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 0.9;
+}
+
+/* Remove list styles on ul, ol elements with a class */
+:where(ul[role='list']),
+:where(ol[role='list']) {
+  padding-inline: 0;
+  list-style-type: none;
+}
+
+/* Set core body defaults */
+body {
+  overflow-y: scroll;
+  min-block-size: 100vh;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.1;
+  color: #000;
+  text-rendering: optimizespeed;
+  background-color: #fff;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-inline-size: 100%;
+}
+
+/* Preserve aspect ratio */
+img[width][height] {
+  block-size: auto;
+}
+
+/* Let SVG scale without boundaries */
+img[src$='.svg'] {
+  max-inline-size: 100%;
+  max-inline-size: none;
+  block-size: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  cursor: pointer;
+  user-select: none;
+  font: inherit;
+  overflow-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
+  text-box-edge: cap alphabetic;
+}
+
+/* Add space for anchor links */
+[id] {
+  scroll-margin-top: 2ex;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+:root {
+  /* Colors */
+  --clr-neutral-100: hsl(280deg 30% 98%);
+  --clr-neutral-200: hsl(280deg 60% 92%);
+  --clr-neutral-300: hsl(280deg 40% 18%);
+  --clr-primary-100: hsl(320deg 85% 75%);
+  --clr-primary-200: hsl(320deg 75% 60%);
+  --clr-primary-300: hsl(180deg 70% 50%);
+  --clr-primary-400: hsl(280deg 50% 25%);
+  --clr-accent-100: hsl(50deg 100% 60%);
+  --clr-accent-200: hsl(50deg 100% 70%);
+
+  /* Single steps */
+  --space-3xs: clamp(0.25rem, calc(0.23rem + 0.09vw), 0.31rem);
+  --space-2xs: clamp(0.5rem, calc(0.48rem + 0.09vw), 0.56rem);
+  --space-xs: clamp(0.75rem, calc(0.71rem + 0.18vw), 0.88rem);
+  --space-s: clamp(1rem, calc(0.96rem + 0.18vw), 1.13rem);
+  --space-m: clamp(1.5rem, calc(1.45rem + 0.27vw), 1.69rem);
+  --space-l: clamp(2rem, calc(1.93rem + 0.36vw), 2.25rem);
+  --space-xl: clamp(3rem, calc(2.89rem + 0.54vw), 3.38rem);
+  --space-2xl: clamp(4rem, calc(3.86rem + 0.71vw), 4.5rem);
+  --space-3xl: clamp(6rem, calc(5.79rem + 1.07vw), 6.75rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.16rem + 0.45vw), 0.56rem);
+  --space-2xs-xs: clamp(0.5rem, calc(0.39rem + 0.54vw), 0.88rem);
+  --space-xs-s: clamp(0.75rem, calc(0.64rem + 0.54vw), 1.13rem);
+  --space-s-m: clamp(1rem, calc(0.8rem + 0.98vw), 1.69rem);
+  --space-m-l: clamp(1.5rem, calc(1.29rem + 1.07vw), 2.25rem);
+  --space-l-xl: clamp(2rem, calc(1.61rem + 1.96vw), 3.38rem);
+  --space-xl-2xl: clamp(3rem, calc(2.57rem + 2.14vw), 4.5rem);
+  --space-2xl-3xl: clamp(4rem, calc(3.21rem + 3.93vw), 6.75rem);
+
+  /* Font styles */
+  --ff-headings: 'Outfit', system-ui, sans-serif;
+  --ff-body: 'Outfit', system-ui, sans-serif;
+
+  /* Font sizes */
+  --step--1: 0.75rem;
+  --step-0: clamp(1rem, calc(0.96rem + 0.18vw), 1.13rem);
+  --step-1: clamp(1.2rem, calc(1.16rem + 0.21vw), 1.35rem);
+  --step-2: clamp(2.07rem, calc(2rem + 0.37vw), 2.33rem);
+  --step-3: clamp(2.49rem, calc(2.4rem + 0.44vw), 2.8rem);
+  --step-4: clamp(2.99rem, calc(2.88rem + 0.53vw), 3.36rem);
+  --step-5: clamp(3.58rem, calc(3.46rem + 0.64vw), 4.03rem);
+
+  /* Box shadow */
+  --shadow-color: 206deg 45% 15%;
+
+  /* prettier-ignore */
+  --shadow-elevation-low:
+    0 0.4px 0.6px hsl(var(--shadow-color) / 0%),
+    0 1.3px 2px hsl(var(--shadow-color) / 25%);
+
+  /* prettier-ignore */
+  --shadow-elevation-medium:
+    0 0.4px 0.6px hsl(var(--shadow-color) / 0%),
+    -0.1px 6.4px 9.6px hsl(var(--shadow-color) / 35%);
+
+  /* prettier-ignore */
+  --shadow-elevation-high:
+    0 0.4px 0.6px hsl(var(--shadow-color) / 0%),
+    -0.1px 6.9px 10.4px hsl(var(--shadow-color) / 29%),
+    -0.3px 21.3px 32px hsl(var(--shadow-color) / 58%);
+}
+
+body {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(320px, 900px)
+    minmax(0, 1fr);
+  min-block-size: 100vh;
+  font-family: var(--ff-body);
+  font-size: var(--step-0);
+  font-weight: 400;
+  color: var(--clr-neutral-300);
+  background-color: var(--clr-neutral-100);
+  transition: background-color var(--duration);
+
+  > * {
+    grid-column: 2;
+  }
+}
+
+:is(h1, h2, h3) {
+  font-family: var(--ff-headings);
+  font-weight: 700;
+  color: var(--clr-neutral-300);
+  letter-spacing: 0.1px;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+:focus-visible {
+  outline: 2px dashed var(--clr-accent-100);
+  outline-offset: 2px;
+}
+
+/* Utilities */
+.visually-hidden:not(:focus, :active) {
+  position: absolute;
+  overflow: hidden;
+  inline-size: 1px;
+  block-size: 1px;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+.stack > * + * {
+  margin-inline: auto;
+  margin-block-start: var(--stack, var(--space-s, 1em));
+}
+
+.box {
+  padding-inline: var(--padding-inline, var(--space-s, 2em));
+  padding-block: var(--padding-block, var(--space-xl, 3em));
+}
+
+/* Blocks */
+button {
+  cursor: pointer;
+  inline-size: 8rem;
+  padding-block: var(--space-2xs);
+  padding-inline: var(--space-xs);
+  border-radius: var(--space-s);
+  font-size: var(--size-0);
+  font-weight: bolder;
+  color: var(--fg, var(--clr-neutral-300));
+  text-align: center;
+  background-color: var(--bg, var(--clr-primary-100));
+  transition: all 300ms;
+
+  &:hover {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-200);
+  }
+}
