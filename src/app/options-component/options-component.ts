@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-options-component',
@@ -7,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './options-component.css',
 })
 export class OptionsComponent {
+
 
 }

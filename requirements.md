@@ -23,9 +23,8 @@
 
 # Data Model
 User:
-- id (unique)
+- user_id (unique)
 - username
-- created_at
 
 Task:
 - id (unique)
@@ -35,6 +34,4 @@ Task:
 - due_date
 - priority (low/medium/high)
 - is_completed (boolean)
-- category
-- created_at
-- updated_at
+- category (personal, work)

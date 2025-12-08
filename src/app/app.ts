@@ -7,6 +7,9 @@ import { ListComponent } from './list-component/list-component';
   imports: [OptionsComponent, ListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
+  host: {
+    class: 'box stack',
+  },
 })
 export class App {
   protected readonly title = signal('Todos');
