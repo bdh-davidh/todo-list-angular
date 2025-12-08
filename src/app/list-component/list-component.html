@@ -1,9 +1,8 @@
-
 <ul role="list" class="stack">
-@for (todo of todos; track $index) {
-  <li>
-    <h3>{{ todo.title }}</h3>
-    <time [attr.datetime]="todo.due_date">{{ todo.due_date | date: 'E d MMM'}}</time>
-  </li>
-}
+  @for (todo of todos; track $index) {
+    <li>
+      <h3>{{ todo.title }}</h3>
+      <time [attr.datetime]="todo.due_date">{{ todo.due_date | date: 'E d MMM' }}</time>
+    </li>
+  }
 </ul>

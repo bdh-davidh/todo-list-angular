@@ -1,3 +1,6 @@
 :host {
-  display: block;
+  --padding-inline: var(--space-m);
+  --padding-block: var(--space-m);
+
+  background-color: var(--clr-neutral-100);
 }

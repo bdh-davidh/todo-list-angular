@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { UsersService } from '../users-service.service';
 
 
 
@@ -9,6 +10,5 @@ import { Component, inject } from '@angular/core';
   styleUrl: './options-component.css',
 })
 export class OptionsComponent {
-
-
+  users = inject(UsersService).users;
 }
