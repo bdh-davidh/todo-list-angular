@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { OptionsComponent } from './options-component/options-component';
 import { ListComponent } from './list-component/list-component';
 
@@ -13,4 +13,6 @@ import { ListComponent } from './list-component/list-component';
 })
 export class App {
   protected readonly title = signal('Todos');
+
+  selectedUser = signal<number | undefined>(undefined);
 }

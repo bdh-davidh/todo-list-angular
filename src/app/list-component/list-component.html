@@ -1,5 +1,5 @@
 <ul role="list" class="stack">
-  @for (todo of todos; track $index) {
+  @for (todo of todosToRender(); track $index) {
     <li>
       <h3>{{ todo.title }}</h3>
       <time [attr.datetime]="todo.due_date">{{ todo.due_date | date: 'E d MMM' }}</time>

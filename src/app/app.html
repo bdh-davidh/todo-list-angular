@@ -1,6 +1,6 @@
 <h1 class="box">Todo List</h1>
 
 <div class="has-sidebar">
-  <app-options-component class="box"/>
-  <app-list-component class="box"/>
+  <app-options-component class="box" (userSelected)=selectedUser.set($event)/>
+  <app-list-component class="box" [selectedUserId]="selectedUser()"/>
 </div>

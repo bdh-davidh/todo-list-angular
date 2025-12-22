@@ -1,6 +1,6 @@
 <div>
   <label for="users" class="visually-hidden">Select user</label>
-  <select name="users" id="users" class="box">
+  <select name="users" id="users" class="box" (change)="handleOnChange($event)">
     <option value="0">Everyone</option>
     @for (user of users; track $index) {
       <option value="{{ user.id }}">{{ user.name }}</option>
