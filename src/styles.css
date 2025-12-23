@@ -117,12 +117,27 @@ select {
   --clr-neutral-100: hsl(280deg 30% 98%);
   --clr-neutral-200: hsl(280deg 60% 92%);
   --clr-neutral-300: hsl(280deg 40% 18%);
-  --clr-primary-100: hsl(320deg 85% 75%);
-  --clr-primary-200: hsl(320deg 75% 60%);
-  --clr-primary-300: hsl(180deg 70% 50%);
-  --clr-primary-400: hsl(280deg 50% 25%);
-  --clr-accent-100: hsl(50deg 100% 60%);
-  --clr-accent-200: hsl(50deg 100% 70%);
+
+  /* Pink range */
+--clr-primary-100: hsl(330deg 60% 88%);
+--clr-primary-200: hsl(320deg 65% 78%);
+--clr-primary-300: hsl(310deg 55% 68%);
+--clr-primary-400: hsl(300deg 50% 58%);
+--clr-primary-500: hsl(290deg 45% 48%);
+
+/* Blue range */
+--clr-secondary-100: hsl(210deg 55% 88%);
+--clr-secondary-200: hsl(200deg 60% 78%);
+--clr-secondary-300: hsl(190deg 50% 68%);
+--clr-secondary-400: hsl(180deg 45% 58%);
+--clr-secondary-500: hsl(170deg 40% 48%);
+
+/* Orange coral range */
+--clr-accent-100: hsl(25deg 65% 92%);
+--clr-accent-200: hsl(28deg 70% 85%);
+--clr-accent-300: hsl(31deg 65% 75%);
+--clr-accent-400: hsl(34deg 70% 68%);
+--clr-accent-500: hsl(37deg 75% 60%);
 
   /* Single steps */
   --space-3xs: clamp(0.25rem, calc(0.23rem + 0.09vw), 0.31rem);
