@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, input } from '@angular/core';
 import { ListComponent } from './list-component/list-component';
 import { SidebarComponent } from './sidebar-component/sidebar-component';
 
@@ -10,6 +10,5 @@ import { SidebarComponent } from './sidebar-component/sidebar-component';
 })
 export class App {
   protected readonly title = signal('Todos');
-
   selectedUser = signal<number>(0);
 }

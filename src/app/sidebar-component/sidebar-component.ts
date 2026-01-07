@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, output, effect } from '@angular/core';
 import { OptionsComponent } from './options-component/options-component';
 import { SummaryComponent } from './summary-component/summary-component';
 
@@ -14,4 +14,11 @@ import { SummaryComponent } from './summary-component/summary-component';
 })
 export class SidebarComponent {
   userSelected = signal<number>(0);
+  userSelectedPassed = output<number>();
+
+  constructor() {
+    effect(() => {
+      this.userSelectedPassed.emit(this.userSelected());
+    });
+  }
 }

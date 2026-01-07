@@ -12,13 +12,13 @@ import { TodosService } from '../todos-service.service';
 })
 export class ListComponent {
   todos = inject(TodosService).todos;
-  selectedUserId = input<number>();
+  selectedUser = input<number>();
 
   todosToRender = computed(() => {
-    if (!this.selectedUserId()) {
+    if (!this.selectedUser()) {
       return this.todos;
     } else {
-      return this.todos.filter((todo) => todo.user_id === this.selectedUserId())
+      return this.todos.filter((todo) => todo.user_id === this.selectedUser())
     }
   })
 }

@@ -1,8 +1,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3xl);
-  margin-block-end: var(--space-3xl);
+  gap: var(--space-2xl);
   font-weight: 600;
   color: var(--clr-primary-500);
 }
