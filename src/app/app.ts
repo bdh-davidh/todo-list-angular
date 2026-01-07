@@ -1,18 +1,15 @@
-import { Component, input, signal } from '@angular/core';
-import { OptionsComponent } from './options-component/options-component';
+import { Component, signal } from '@angular/core';
 import { ListComponent } from './list-component/list-component';
+import { SidebarComponent } from './sidebar-component/sidebar-component';
 
 @Component({
   selector: 'app-root',
-  imports: [OptionsComponent, ListComponent],
+  imports: [SidebarComponent, ListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  host: {
-    class: 'box stack',
-  },
 })
 export class App {
   protected readonly title = signal('Todos');
 
-  selectedUser = signal<number | undefined>(undefined);
+  selectedUser = signal<number>(0);
 }

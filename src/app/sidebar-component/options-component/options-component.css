@@ -37,6 +37,7 @@ select:open::picker-icon {
 }
 
 ::picker(select):popover-open {
+  padding: var(--space-2xs);
   opacity: 1;
 }
 
@@ -44,10 +45,6 @@ select:open::picker-icon {
   ::picker(select):popover-open {
     opacity: 0;
   }
-}
-
-option:not(:first-of-type) {
-  margin-block-start: var(--space-s);
 }
 
 option {
@@ -59,4 +56,8 @@ option {
   &:hover {
     background-color: var(--clr-neutral-200);
   }
+}
+
+option:not(:first-of-type) {
+  margin-block-start: var(--space-s);
 }

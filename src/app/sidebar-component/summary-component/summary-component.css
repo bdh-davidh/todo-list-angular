@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+  margin-block-end: var(--space-3xl);
+  font-weight: 600;
+  color: var(--clr-primary-500);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+
+  > div {
+    display: inline-flex;
+    justify-content: space-between;
+
+    > span:first-of-type {
+      color: var(--clr-neutral-300);
+    }
+
+    > span:last-of-type {
+      min-inline-size: 2ch;
+      text-align: center;
+    }
+  }
+}
