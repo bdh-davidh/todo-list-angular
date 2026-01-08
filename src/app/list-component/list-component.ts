@@ -1,12 +1,12 @@
 import { Component, computed, inject, input } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { TodoItemComponent } from './todo-item-component/todo-item-component';
 import { TodosService } from '../todos-service.service';
 
 
 
 @Component({
   selector: 'app-list-component',
-  imports: [DatePipe],
+  imports: [TodoItemComponent],
   templateUrl: './list-component.html',
   styleUrl: './list-component.css',
 })
@@ -18,7 +18,7 @@ export class ListComponent {
     if (!this.selectedUser()) {
       return this.todos;
     } else {
-      return this.todos.filter((todo) => todo.user_id === this.selectedUser())
+      return this.todos.filter((todo) => todo.user_id === this.selectedUser());
     }
-  })
+  });
 }
