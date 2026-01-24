@@ -1,6 +1,9 @@
 <h1 class="box">Todo List</h1>
 
 <div class="has-sidebar">
-  <app-sidebar-component (userSelectedPassed)="selectedUser.set($event)"/>
-  <app-list-component class="box" [selectedUser]="selectedUser()"/>
+  <app-sidebar-component (userSelectedPassed)="selectedUser.set($event)" />
+  <app-list-component class="box" [selectedUser]="selectedUser()" />
+  <button type="button" (click)="showAddTodo.set(true)"><span>+</span></button>
 </div>
+
+<app-new-todo-component [showAddTodo]="showAddTodo()" (hideAddTodo)="showAddTodo.set(false)" />

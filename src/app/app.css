@@ -1,15 +1,41 @@
-
 h1 {
   color: var(--clr-neutral-100);
 }
 
 .has-sidebar {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   inline-size: 100%;
   block-size: 90%;
+  overflow-y: scroll;
   background-color: var(--clr-neutral-200);
   border-radius: var(--radius-1);
+
+  button {
+    position: absolute;
+    inset-block-end: var(--space-m);
+    inset-inline-end: var(--space-m);
+    display: grid;
+    place-items: center;
+    inline-size: 70px;
+    block-size: 70px;
+    aspect-ratio: 1;
+    font-size: var(--step-5);
+    border-radius: 99999px;
+    box-shadow: var(--shadow-elevation-medium);
+    scale: 1;
+    transition: all 200ms ease-out;
+
+    &:hover {
+      box-shadow: var(--shadow-elevation-high);
+      scale: 1.025;
+    }
+
+    span {
+      transform: translateY(-12px);
+    }
+  }
 }
 
 .has-sidebar > :first-child {
@@ -17,7 +43,7 @@ h1 {
   flex-basis: 18rem;
 }
 
-.has-sidebar > :last-child {
+.has-sidebar > :nth-child(2) {
   flex-grow: 999;
   flex-basis: 0;
   min-inline-size: 50%;

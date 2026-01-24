@@ -181,7 +181,7 @@ select {
   --step-5: clamp(3.58rem, calc(3.46rem + 0.64vw), 4.03rem);
 
   /* Box shadow */
-  --shadow-color: 206deg 45% 15%;
+  --shadow-color: 280deg 40% 18%;
 
   /* prettier-ignore */
   --shadow-elevation-low:
@@ -244,7 +244,7 @@ h3 {
 }
 
 :focus-visible {
-  outline: 2px dashed var(--clr-accent-100);
+  outline: 2px dashed currentcolor;
   outline-offset: 2px;
 }
 
@@ -286,5 +286,15 @@ button {
   &:hover {
     color: var(--clr-neutral-100);
     background-color: var(--clr-primary-200);
+  }
+
+  &[variant='outline'] {
+    color: var(--clr-neutral-300);
+    background-color: var(--clr-neutral-100);
+
+    &:hover {
+      color: var(--clr-neutral-100);
+      background-color: var(--clr-primary-200);
+    }
   }
 }

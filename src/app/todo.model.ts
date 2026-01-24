@@ -6,5 +6,5 @@ export interface Todo {
   due_date: string;
   priority: 'high' | 'medium' | 'low';
   is_completed: boolean;
-  category: string;
+  category: 'work' | 'personal';
 }

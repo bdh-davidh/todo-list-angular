@@ -1,4 +1,4 @@
-import { Component, output, signal, inject } from '@angular/core';
+import { Component, output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UsersService } from '../../users-service.service';
 
@@ -10,7 +10,8 @@ import { UsersService } from '../../users-service.service';
   styleUrl: './options-component.css',
 })
 export class OptionsComponent {
-  users = inject(UsersService).users;
+  private usersService = inject(UsersService);
+  users = this.usersService.users;
   userSelected = output<number>();
 
   handleOnChange(event: Event): void {
