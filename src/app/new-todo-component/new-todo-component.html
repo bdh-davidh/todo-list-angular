@@ -1,17 +1,23 @@
 <dialog closedby="any" #appDialog class="box">
   <h2 class="visually-hidden">Add todo</h2>
-  <form ngSubmit>
-    <label for="title">Title <input type="text" name="title" id="title" /></label>
-
-    <label for="description"
-      >Description <textarea name="description" id="description" rows="3"></textarea>
+  <form #todoForm="ngForm">
+    <label for="title">Title
+      <input type="text" name="title" id="title"  [(ngModel)]="newTodo.title"/>
     </label>
 
-    <label for="dueDate">Deadline <input type="date" name="dueDate" id="dueDate" /></label>
+    <label for="description"
+      >Description
+      <textarea name="description" id="description" rows="3" [(ngModel)]="newTodo.description">
 
+      </textarea>
+    </label>
+
+    <label for="dueDate">Deadline
+      <input type="date" name="dueDate" id="dueDate" [(ngModel)]="newTodo.due_date"/>
+    </label>
     <label for="users"
       ><span class="visually-hidden">Select user</span>
-      <select name="users" id="users">
+      <select name="users" id="users" [(ngModel)]="newTodo.user_id">
         <option disabled selected>Select user</option>
         @for (user of users; track $index) {
           <option value="{{ user.id }}">{{ user.name }}</option>
@@ -21,7 +27,7 @@
 
     <label for="priority"
       ><span class="visually-hidden">Select priority</span>
-      <select name="priority" id="priority">
+      <select name="priority" id="priority" [(ngModel)]="newTodo.priority">
         <option disabled selected>Priority</option>
         <option value="high">High</option>
         <option value="medium">Medium</option>
@@ -31,7 +37,7 @@
 
     <label for="category"
       ><span class="visually-hidden">Category</span>
-      <select name="category" id="category">
+      <select name="category" id="category" [(ngModel)]="newTodo.category">
         <option disabled selected>Select category</option>
         <option value="work">Work</option>
         <option value="personal">Personal</option>
@@ -39,8 +45,8 @@
     >
 
     <div class="flex-wrapper">
-      <button variant="outline" type="reset" (click)="closeModal()">Cancel</button>
-      <button type="submit" (click)="closeModal()">Create</button>
+      <button variant="outline" type="reset" (click)="closeModal(todoForm)">Cancel</button>
+      <button type="submit" (click)="handleCreateTodo(todoForm)">Create</button>
     </div>
   </form>
 </dialog>

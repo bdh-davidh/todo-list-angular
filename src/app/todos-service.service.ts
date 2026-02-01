@@ -7,8 +7,8 @@ import { Todo } from './todo.model';
 export class TodosService {
   todos: Todo[] = [
     {
-      id: 1,
-      user_id: 1,
+      id: '1',
+      user_id: '1',
       title: 'Finish project proposal',
       description: 'Complete the final draft and send to the client for review.',
       due_date: '2025-01-10',
@@ -17,8 +17,8 @@ export class TodosService {
       category: 'work',
     },
     {
-      id: 2,
-      user_id: 1,
+      id: '2',
+      user_id: '1',
       title: 'Book car service',
       description: 'Schedule MOT and annual service.',
       due_date: '2025-01-15',
@@ -27,8 +27,8 @@ export class TodosService {
       category: 'personal',
     },
     {
-      id: 3,
-      user_id: 2,
+      id: '3',
+      user_id: '2',
       title: 'Prepare weekly meal plan',
       description: 'Plan dinners and create a grocery shopping list.',
       due_date: '2025-01-07',
@@ -37,8 +37,8 @@ export class TodosService {
       category: 'personal',
     },
     {
-      id: 4,
-      user_id: 2,
+      id: '4',
+      user_id: '2',
       title: 'Team performance review',
       description: 'Complete quarterly report for direct reports.',
       due_date: '2025-01-12',
@@ -47,8 +47,8 @@ export class TodosService {
       category: 'work',
     },
     {
-      id: 5,
-      user_id: 3,
+      id: '5',
+      user_id: '3',
       title: 'Study for math exam',
       description: 'Revise algebra and geometry chapters.',
       due_date: '2025-01-09',
@@ -57,8 +57,8 @@ export class TodosService {
       category: 'personal',
     },
     {
-      id: 6,
-      user_id: 3,
+      id: '6',
+      user_id: '3',
       title: 'Group science project',
       description: 'Prepare slides and practice presentation.',
       due_date: '2025-01-14',
@@ -67,8 +67,8 @@ export class TodosService {
       category: 'work',
     },
     {
-      id: 7,
-      user_id: 4,
+      id: '7',
+      user_id: '4',
       title: 'Clean bedroom',
       description: 'Tidy desk, vacuum floor, and organise bookshelf.',
       due_date: '2025-01-06',
@@ -77,8 +77,8 @@ export class TodosService {
       category: 'personal',
     },
     {
-      id: 8,
-      user_id: 4,
+      id: '8',
+      user_id: '4',
       title: 'Finish homework',
       description: 'Complete English and history assignments.',
       due_date: '2025-01-08',
@@ -87,8 +87,8 @@ export class TodosService {
       category: 'work',
     },
     {
-      id: 9,
-      user_id: 1,
+      id: '9',
+      user_id: '1',
       title: 'Update website content',
       description: 'Refresh homepage copy and fix broken links.',
       due_date: '2025-01-11',
@@ -97,8 +97,8 @@ export class TodosService {
       category: 'work',
     },
     {
-      id: 10,
-      user_id: 2,
+      id: '10',
+      user_id: '2',
       title: 'Yoga session',
       description: 'Attend evening vinyasa class.',
       due_date: '2025-01-10',

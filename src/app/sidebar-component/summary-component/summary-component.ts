@@ -12,10 +12,10 @@ import { Todo } from '../../todo.model';
 export class SummaryComponent {
   users = inject(UsersService).users;
   todos = inject(TodosService).todos;
-  userSelected = input<number>();
+  userSelected = input<string>();
 
   filterTodos = computed(() => (type: 'category' | 'priority', value: string) => {
-    if (this.userSelected() === 0 ) {
+    if (this.userSelected() === '0' ) {
       return this.todos.filter((todo: Todo) => todo[type] === value).length;
     }
 

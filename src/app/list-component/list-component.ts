@@ -12,7 +12,7 @@ import { TodosService } from '../todos-service.service';
 })
 export class ListComponent {
   todos = inject(TodosService).todos;
-  selectedUser = input<number>();
+  selectedUser = input<string>();
 
   todosToRender = computed(() => {
     if (!this.selectedUser()) {

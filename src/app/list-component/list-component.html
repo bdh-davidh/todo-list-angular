@@ -1,5 +1,5 @@
 <ul role="list" class="stack" >
-  @for (todo of todosToRender(); track $index) {
-   <app-todo-item-component [todo]="todo" />
+  @for (todoEntry of todosToRender(); track $index) {
+   <app-todo-item-component [todo]="todoEntry" />
   }
 </ul>
