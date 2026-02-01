@@ -27,17 +27,6 @@ export class NewTodoComponent {
     });
   }
 
-  newTodo: Todo = {
-    id: crypto.randomUUID(),
-    title: '',
-    description: '',
-    due_date: '',
-    user_id: '0',
-    priority: 'low',
-    category: 'personal',
-    is_completed: false,
-  };
-
   closeModal(todoForm: NgForm): void {
     this.dialog().nativeElement.close();
     this.hideAddTodo.emit(false);
@@ -45,7 +34,17 @@ export class NewTodoComponent {
   }
 
   handleCreateTodo(todoForm: NgForm) {
-    console.log(this.newTodo);
+    const newTodo: Todo = {
+      id: crypto.randomUUID(),
+      user_id: todoForm.form.value.user_id,
+      title: todoForm.form.value.title,
+      description: todoForm.form.value.description,
+      due_date: todoForm.form.value.dueDate,
+      priority: todoForm.form.value.priority,
+      is_completed: false,
+      category: todoForm.form.value.category,
+    };
     this.closeModal(todoForm);
+    this.todos.update((currentTodos) => [...currentTodos, newTodo]);
   }
 }

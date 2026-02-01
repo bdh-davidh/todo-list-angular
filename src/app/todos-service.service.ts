@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Todo } from './todo.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
-  todos: Todo[] = [
+  todos = signal<Todo[]>([
     {
       id: '1',
       user_id: '1',
@@ -106,5 +106,5 @@ export class TodosService {
       is_completed: false,
       category: 'personal',
     },
-  ];
+  ]);
 }

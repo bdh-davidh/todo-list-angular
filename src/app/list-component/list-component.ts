@@ -16,9 +16,9 @@ export class ListComponent {
 
   todosToRender = computed(() => {
     if (!this.selectedUser()) {
-      return this.todos;
+      return this.todos();
     } else {
-      return this.todos.filter((todo) => todo.user_id === this.selectedUser());
+      return this.todos().filter((todo) => todo.user_id === this.selectedUser());
     }
   });
 }

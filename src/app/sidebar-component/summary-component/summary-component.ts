@@ -16,10 +16,10 @@ export class SummaryComponent {
 
   filterTodos = computed(() => (type: 'category' | 'priority', value: string) => {
     if (this.userSelected() === '0' ) {
-      return this.todos.filter((todo: Todo) => todo[type] === value).length;
+      return this.todos().filter((todo: Todo) => todo[type] === value).length;
     }
 
-    return this.todos
+    return this.todos()
       .filter((todo: Todo) => todo.user_id === this.userSelected())
       .filter((todo: Todo) => todo[type] === value).length;
   });
