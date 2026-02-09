@@ -12,10 +12,10 @@ import { UsersService } from '../../users-service.service';
 export class OptionsComponent {
   private usersService = inject(UsersService);
   users = this.usersService.users;
-  userSelected = output<number>();
+  userSelected = output<string>();
 
   handleOnChange(event: Event): void {
-    const target = Number((event.target as HTMLSelectElement).value);
+    const target = (event.target as HTMLSelectElement).value;
     this.userSelected.emit(target);
   }
 }

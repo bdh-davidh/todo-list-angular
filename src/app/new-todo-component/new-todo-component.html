@@ -1,35 +1,34 @@
-<dialog closedby="any" #appDialog class="box">
+<dialog #appDialog class="box">
   <h2 class="visually-hidden">Add todo</h2>
   <form #todoForm="ngForm">
     <label for="title">Title
-      <input type="text" name="title" id="title" placeholder="Type your todo" ngModel required/>
+      <input type="text" name="title" id="title" placeholder="Type your todo" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'title')" />
     </label>
 
     <label for="description"
       >Description
-      <textarea name="description" id="description" rows="3" placeholder="Add some details, if you want to. " ngModel >
-
+      <textarea name="description" id="description" rows="3" placeholder="Add some details, if you want to." ngModel [class.input-error]="inputIsInvalid(todoForm, 'description')" >
       </textarea>
     </label>
 
     <label for="dueDate">Deadline
-      <input type="date" name="dueDate" id="dueDate" ngModel required/>
+      <input type="date" name="dueDate" id="dueDate" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'dueDate')" />
     </label>
 
     <label for="users"
       ><span class="visually-hidden">Select user</span>
-      <select name="user_id" id="users" ngModel="" required>
-        <option disabled value="">Select user</option>
+      <select name="user_id" id="users" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'user_id')" >
+        <option disabled selected value="">Select user</option>
         @for (user of users; track $index) {
-          <option value="{{ user.id }}">{{ user.name }}</option>
+      an    <option value="{{ user.id }}">{{ user.name }}</option>
         }
       </select></label
     >
 
     <label for="priority"
       ><span class="visually-hidden">Select priority</span>
-      <select name="priority" id="priority" ngModel="" required>
-        <option disabled value="">Priority</option>
+      <select name="priority" id="priority" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'priority')" >
+        <option disabled selected value="">Priority</option>
         <option value="high">High</option>
         <option value="medium">Medium</option>
         <option value="low">Low</option>
@@ -38,8 +37,8 @@
 
     <label for="category"
       ><span class="visually-hidden">Category</span>
-      <select name="category" id="category" ngModel="" required>
-        <option disabled value="">Select category</option>
+      <select name="category" id="category" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'category')">
+        <option disabled selected value="">Select category</option>
         <option value="work">Work</option>
         <option value="personal">Personal</option>
       </select></label
@@ -51,5 +50,16 @@
 
       >Create</button>
     </div>
+
+    @if (todoForm.touched && todoForm.invalid && submitAttempted) {
+      <div class="error-message">
+        <p>Please complete the following fields:</p>
+        <ul>
+        @for (invalidFormControl of getInvalidControls(todoForm); track $index) {
+          <li>{{ getFieldLabel(invalidFormControl) }}</li>
+        }
+        </ul>
+      </div>
+    }
   </form>
 </dialog>

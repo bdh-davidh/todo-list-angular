@@ -11,6 +11,6 @@ import { NewTodoComponent } from './new-todo-component/new-todo-component';
 })
 export class App {
   protected readonly title = signal('Todos');
-  selectedUser = signal<number>(0);
+  selectedUser = signal<string>('0');
   showAddTodo = signal(false);
 }

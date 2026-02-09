@@ -13,8 +13,8 @@ import { SummaryComponent } from './summary-component/summary-component';
   },
 })
 export class SidebarComponent {
-  userSelected = signal<number>(0);
-  userSelectedPassed = output<number>();
+  userSelected = signal<string>('0');
+  userSelectedPassed = output<string>();
 
   constructor() {
     effect(() => {
