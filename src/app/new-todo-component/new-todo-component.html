@@ -2,7 +2,7 @@
   <h2 class="visually-hidden">Add todo</h2>
   <form #todoForm="ngForm">
     <label for="title">Title
-      <input type="text" name="title" id="title" placeholder="Type your todo" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'title')" />
+      <input type="text" name="title" id="title" placeholder="What needs to be done?" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'title')" />
     </label>
 
     <label for="description"

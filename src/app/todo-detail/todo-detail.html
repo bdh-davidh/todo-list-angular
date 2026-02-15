@@ -1,0 +1,96 @@
+<form #todoForm="ngForm">
+  <label for="title"
+    >Title
+    <input
+      type="text"
+      name="title"
+      id="title"
+      placeholder="What needs to be done?"
+      [(ngModel)]='todoTitle'
+      required
+      [class.input-error]="inputIsInvalid(todoForm, 'title')"
+    />
+  </label>
+
+  <label for="description"
+    >Description
+    <textarea
+      name="description"
+      id="description"
+      rows="3"
+      placeholder="Add some details, if you want to."
+      [(ngModel)]='todoDescription'
+      [class.input-error]="inputIsInvalid(todoForm, 'description')"
+    >
+    </textarea>
+  </label>
+
+  <label for="dueDate"
+    >Deadline
+    <input
+      type="date"
+      name="dueDate"
+      id="dueDate"
+      [(ngModel)]='todoDate'
+      required
+      [class.input-error]="inputIsInvalid(todoForm, 'dueDate')"
+    />
+  </label>
+
+  <label for="users"
+    ><span class="visually-hidden">Select user</span>
+    <select
+      name="user_id"
+      id="users"
+      [(ngModel)]='todoUser'
+      required
+      [class.input-error]="inputIsInvalid(todoForm, 'user_id')"
+    >
+      @for (user of users; track $index) {
+        an
+        <option value="{{ user.id }}">{{ user.name }}</option>
+      }
+    </select></label
+  >
+
+  <label for="priority"
+    ><span class="visually-hidden">Select priority</span>
+    <select
+      name="priority"
+      id="priority"
+      [(ngModel)]='todoPriority'
+      required
+      [class.input-error]="inputIsInvalid(todoForm, 'priority')"
+    >
+      <option value="high">High</option>
+      <option value="medium">Medium</option>
+      <option value="low">Low</option>
+    </select></label
+  >
+
+  <label for="category"
+    ><span class="visually-hidden">Category</span>
+    <select
+      name="category"
+      id="category"
+       [(ngModel)]='todoCategory'
+      required
+      [class.input-error]="inputIsInvalid(todoForm, 'category')"
+    >
+      <option value="work">Work</option>
+      <option value="personal">Personal</option>
+    </select></label
+  >
+
+    <div class="flex-wrapper" style="justify-content: space-between;">
+      <a [routerLink]="['']" variant="outline">Back</a>
+      <button type="submit" (click)="updateTodos(todoForm)">Update</button>
+    </div>
+
+
+  @if (todoForm.touched && todoForm.invalid && updateAttempted) {
+    <div class="error-message">
+      <p>Please add a short title for you what needs to be done</p>
+    </div>
+  }
+</form>

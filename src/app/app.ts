@@ -1,11 +1,10 @@
-import { Component, input, signal } from '@angular/core';
-import { ListComponent } from './list-component/list-component';
-import { SidebarComponent } from './sidebar-component/sidebar-component';
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { NewTodoComponent } from './new-todo-component/new-todo-component';
 
 @Component({
   selector: 'app-root',
-  imports: [SidebarComponent, ListComponent, NewTodoComponent],
+  imports: [RouterOutlet, NewTodoComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

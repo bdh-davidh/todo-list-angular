@@ -1,10 +1,14 @@
-<li class="stack" style="--stack: var(--space-2xs);">
-  <div style="display: flex; gap: var(--space-xs); justify-content: space-between">
-    <h3>{{ todo()?.title }}</h3>
-    <time [attr.datetime]="todo()?.due_date">{{ todo()?.due_date | date: 'E d MMM' }}</time>
-  </div>
-  <div style="display: flex; gap: var(--space-xs)">
-    <span class="priority {{ todo()?.priority }}">{{ todo()?.priority }}</span>
-    <span class="category {{ todo()?.category }}">{{ todo()?.category }}</span>
-  </div>
+<li>
+  <a
+    [routerLink]="['/todos', todo()?.id]"
+    class="stack" style="--stack: var(--space-2xs)">
+    <div style="display: flex; gap: var(--space-xs); justify-content: space-between">
+      <h3>{{ todo()?.title }}</h3>
+      <time [attr.datetime]="todo()?.due_date">{{ todo()?.due_date | date: 'E d MMM' }}</time>
+    </div>
+    <div style="display: flex; gap: var(--space-xs)">
+      <span class="priority {{ todo()?.priority }}">{{ todo()?.priority }}</span>
+      <span class="category {{ todo()?.category }}">{{ todo()?.category }}</span>
+    </div>
+  </a>
 </li>

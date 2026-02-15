@@ -3,11 +3,10 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { UsersService } from '../users-service.service';
 import { TodosService } from '../todos-service.service';
 import { Todo } from '../todo.model';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-new-todo-component',
-  imports: [JsonPipe, FormsModule],
+  imports: [FormsModule],
   templateUrl: './new-todo-component.html',
   styleUrl: './new-todo-component.css',
 })

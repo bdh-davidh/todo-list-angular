@@ -1,12 +1,4 @@
-dialog {
-  margin-block-start: 25%;
-  border-radius: var(--space-xs);
-  box-shadow: var(--shadow-elevation-high);
 
-  &::backdrop {
-    background-color: hsl(from var(--clr-neutral-200) h s l / 80%);
-  }
-}
 
 form {
   display: flex;
@@ -24,9 +16,14 @@ input,
 textarea,
 select {
   min-block-size: 1.75em;
-  background-color: hsl(from var(--clr-neutral-200) h s l / 25%);
+  color: var(--clr-neutral-100);
+  background-color: hsl(from var(--clr-neutral-100) h s l / 25%);
   border: 1px solid currentcolor;
   border-radius: 2px;
+
+  &::placeholder {
+    color: white;
+  }
 }
 
 .flex-wrapper {
@@ -36,6 +33,7 @@ select {
 }
 
 /* Error styles */
+
 .error-message {
   color: var(--clr-primary-500);
 
@@ -49,4 +47,8 @@ select {
 .input-error:is(input, select, textarea) {
   border-color: 1px solid var(--clr-primary-500);
   box-shadow:  0 0 0 2px var(--clr-primary-500);
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
