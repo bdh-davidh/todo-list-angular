@@ -1,38 +1,71 @@
-
-
 form {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
+  padding: var(--space-m);
+  margin-block-start: var(--space-l);
+  background-color: var(--clr-neutral-100);
+  border: 3px solid var(--clr-secondary-500);
+  border-radius: var(--space-xs);
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+h2 {
+  margin-block-end: var(--space-m);
+  color: var(--clr-accent-500);
 }
 
 label {
   display: flex;
   flex-direction: column;
   gap: calc(var(--space-3xs) * 0.75);
+  font-weight: bolder;
+  color: var(--clr-secondary-500);
 }
 
 input,
 textarea,
 select {
-  min-block-size: 1.75em;
+  min-block-size: 2rem;
+  padding-block: var(--space-3xs);
+  padding-inline: var(--space-2xs);
+  margin-block-start: var(--space-3xs);
+  font-weight: lighter;
   color: var(--clr-neutral-100);
-  background-color: hsl(from var(--clr-neutral-100) h s l / 25%);
+  background-color: var(--clr-accent-500);
   border: 1px solid currentcolor;
   border-radius: 2px;
 
   &::placeholder {
-    color: white;
+    color: var(--clr-neutral-100);
   }
+}
+
+option {
+  color: white;
+  background-color: var(--clr-accent-500);
+
+  &:hover {
+    background-color: var(--clr-accent-300);
+  }
+}
+
+option:not(:first-of-type) {
+  margin-block-start: var(--space-2xs);
 }
 
 .flex-wrapper {
   display: flex;
   gap: var(--space-xs);
+  justify-content: space-between;
   margin-block-start: var(--space-xs);
+
+  > label {
+    flex: 1;
+  }
 }
 
-/* Error styles */
+/* Error styles
 
 .error-message {
   color: var(--clr-primary-500);
@@ -47,8 +80,8 @@ select {
 .input-error:is(input, select, textarea) {
   border-color: 1px solid var(--clr-primary-500);
   box-shadow:  0 0 0 2px var(--clr-primary-500);
-}
+} */
 
 ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+  filter: invert(1);
 }

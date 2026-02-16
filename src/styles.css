@@ -224,6 +224,10 @@ body {
   }
 }
 
+body:has(app-todo-detail) {
+  background-color: var(--clr-accent-200);
+}
+
 :is(h1, h2, h3) {
   font-family: var(--ff-headings);
   font-weight: 700;
@@ -241,6 +245,10 @@ h2 {
 
 h3 {
   font-size: var(--step-1);
+}
+
+a {
+  color: inherit;
 }
 
 :focus-visible {
@@ -297,4 +305,89 @@ button {
       background-color: var(--clr-primary-200);
     }
   }
+}
+
+/* Select Styles */
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  --padding-inline: var(--space-2xs);
+  --padding-block: var(--space-2xs);
+
+  inline-size: 100%;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-300);
+  border-radius: var(--radius-1);
+}
+
+select::picker-icon {
+  rotate: 0deg;
+  transition: 200ms rotate;
+}
+
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+::picker(select) {
+  padding: var(--space-xs);
+  margin-block-start: var(--space-2xs);
+  border: none;
+  border-radius: var(--radius-1);
+  opacity: 0;
+  transition: all 200ms allow-discrete;
+}
+
+::picker(select):popover-open {
+  padding: var(--space-2xs);
+  margin-block: var(--space-2xs);
+  box-shadow: var(--shadow-elevation-low);
+  opacity: 1;
+}
+
+@starting-style {
+  ::picker(select):popover-open {
+    opacity: 0;
+  }
+}
+
+option {
+  padding-block: var(--space-xs);
+  background-color: var(--clr-neutral-100);
+  border-radius: var(--radius-1);
+  transition: all 200ms ease;
+
+  &:hover {
+    background-color: var(--clr-neutral-200);
+  }
+}
+
+option:not(:first-of-type) {
+  margin-block-start: var(--space-s);
+}
+
+option:checked {
+  font-weight: bold;
+}
+
+
+/* Error styles */
+.error-message {
+  margin-block-start: var(--s-m);
+  color: var(--clr-primary-500);
+
+  ul {
+    padding: 0;
+    margin-block-start: var(--space-2xs);
+    list-style-position: inside;
+  }
+}
+
+.input-error:is(input, select, textarea) {
+  border-color: 1px solid var(--clr-primary-500);
+  box-shadow:  0 0 0 2px var(--clr-primary-500);
 }

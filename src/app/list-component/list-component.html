@@ -1,5 +1,5 @@
-<ul role="list" class="stack" >
+<ul role="list" class="stack" cdkDropList (cdkDropListDropped)="drop($event)">
   @for (todoEntry of todosToRender(); track $index) {
-   <app-todo-item-component [todo]="todoEntry" />
+   <app-todo-item-component [todo]="todoEntry" cdkDrag/>
   }
 </ul>

@@ -1,13 +1,13 @@
-<dialog #appDialog class="box">
-  <h2 class="visually-hidden">Add todo</h2>
+<dialog #appDialog class="box stack">
+  <h2>Add to-do</h2>
   <form #todoForm="ngForm">
-    <label for="title">Title
+    <label for="title">Task
       <input type="text" name="title" id="title" placeholder="What needs to be done?" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'title')" />
     </label>
 
     <label for="description"
       >Description
-      <textarea name="description" id="description" rows="3" placeholder="Add some details, if you want to." ngModel [class.input-error]="inputIsInvalid(todoForm, 'description')" >
+      <textarea name="description" id="description" rows="3" placeholder="Add some details (optional)" ngModel [class.input-error]="inputIsInvalid(todoForm, 'description')" >
       </textarea>
     </label>
 
@@ -15,20 +15,22 @@
       <input type="date" name="dueDate" id="dueDate" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'dueDate')" />
     </label>
 
+    <div class="flex-wrapper">
+
     <label for="users"
-      ><span class="visually-hidden">Select user</span>
+      ><span>User</span>
       <select name="user_id" id="users" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'user_id')" >
         <option disabled selected value="">Select user</option>
         @for (user of users; track $index) {
-      an    <option value="{{ user.id }}">{{ user.name }}</option>
+         <option value="{{ user.id }}">{{ user.name }}</option>
         }
       </select></label
     >
 
     <label for="priority"
-      ><span class="visually-hidden">Select priority</span>
+      ><span>Priority</span>
       <select name="priority" id="priority" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'priority')" >
-        <option disabled selected value="">Priority</option>
+        <option disabled selected value="">Select priority</option>
         <option value="high">High</option>
         <option value="medium">Medium</option>
         <option value="low">Low</option>
@@ -36,15 +38,16 @@
     >
 
     <label for="category"
-      ><span class="visually-hidden">Category</span>
+      ><span>Category</span>
       <select name="category" id="category" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'category')">
         <option disabled selected value="">Select category</option>
         <option value="work">Work</option>
         <option value="personal">Personal</option>
       </select></label
     >
+    </div>
 
-    <div class="flex-wrapper">
+    <div class="flex-wrapper" style="margin-block-start: var(--space-m);">
       <button variant="outline" type="reset" (click)="closeModal(todoForm)">Cancel</button>
       <button type="submit" (click)="handleCreateTodo(todoForm)"
 

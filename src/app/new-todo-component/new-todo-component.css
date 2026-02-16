@@ -1,10 +1,12 @@
 dialog {
+  min-inline-size: 70%;
   margin-block-start: 25%;
+  border-color: var(--clr-secondary-500);
   border-radius: var(--space-xs);
   box-shadow: var(--shadow-elevation-high);
 
   &::backdrop {
-    background-color: hsl(from var(--clr-neutral-200) h s l / 80%);
+    background-color: hsl(from var(--clr-secondary-300) h s l / 90%);
   }
 }
 
@@ -14,39 +16,62 @@ form {
   gap: var(--space-xs);
 }
 
+h2 {
+  margin-block-end: var(--space-m);
+  color: var(--clr-secondary-500);
+}
+
 label {
   display: flex;
   flex-direction: column;
   gap: calc(var(--space-3xs) * 0.75);
+  font-weight: bolder;
+  color: var(--clr-primary-300);
 }
 
 input,
 textarea,
 select {
-  min-block-size: 1.75em;
-  background-color: hsl(from var(--clr-neutral-200) h s l / 25%);
+  min-block-size: 2rem;
+  padding-block: var(--space-3xs);
+  padding-inline: var(--space-2xs);
+  margin-block-start: var(--space-3xs);
+  font-weight: lighter;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-secondary-400);
   border: 1px solid currentcolor;
   border-radius: 2px;
+
+  &::placeholder {
+    color: var(--clr-neutral-100);
+  }
+}
+
+
+option {
+  color: white;
+  background-color: var(--clr-secondary-500);
+
+  &:hover {
+    background-color: var(--clr-secondary-400);
+  }
+}
+
+option:not(:first-of-type) {
+  margin-block-start: var(--space-2xs);
 }
 
 .flex-wrapper {
   display: flex;
   gap: var(--space-xs);
+  justify-content: space-between;
   margin-block-start: var(--space-xs);
-}
 
-/* Error styles */
-.error-message {
-  color: var(--clr-primary-500);
-
-  ul {
-    padding: 0;
-    margin-block-start: var(--space-2xs);
-    list-style-position: inside;
+  > label {
+    flex: 1;
   }
 }
 
-.input-error:is(input, select, textarea) {
-  border-color: 1px solid var(--clr-primary-500);
-  box-shadow:  0 0 0 2px var(--clr-primary-500);
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
