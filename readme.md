@@ -1,4 +1,3 @@
-TODO
+A todo list to help me understand Angular better.
 
-Add number of tasks to dropdown
-Start adding and removing todos!
+Lvie preview here: https://todo-list-angular-ochre-eight.vercel.app/
