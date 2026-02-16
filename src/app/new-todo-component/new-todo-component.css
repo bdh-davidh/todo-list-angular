@@ -1,5 +1,5 @@
 dialog {
-  min-inline-size: 70%;
+  inline-size: min(100%, 60rem);
   margin-block-start: 25%;
   border-color: var(--clr-secondary-500);
   border-radius: var(--space-xs);
