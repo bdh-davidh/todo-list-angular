@@ -16,9 +16,8 @@ export class SidebarComponent {
   userSelected = signal<string>('0');
   userSelectedPassed = output<string>();
 
-  constructor() {
-    effect(() => {
-      this.userSelectedPassed.emit(this.userSelected());
-    });
+  onUserChange(userId: string) {
+    this.userSelected.set(userId);
+    this.userSelectedPassed.emit(userId);
   }
 }

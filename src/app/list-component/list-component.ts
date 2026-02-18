@@ -1,8 +1,7 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { TodoItemComponent } from './todo-item-component/todo-item-component';
 import { TodosService } from '../todos-service.service';
-import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
-
+import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-list-component',
@@ -23,8 +22,19 @@ export class ListComponent {
   });
 
   drop(event: CdkDragDrop<string[]>) {
-    const reOrderedArray = [...this.todos()];
-    moveItemInArray(reOrderedArray, event.previousIndex, event.currentIndex);
-    this.todos.set(reOrderedArray);
+    const filteredTodos = this.todosToRender();
+    const fullTodos = [...this.todos()];
+
+    // Get the todo item being moved
+    const movedTodo = filteredTodos[event.previousIndex];
+
+    // Find their positions in the full array
+    const oldIndex = fullTodos.findIndex((todo) => todo.id === movedTodo.id);
+    const targetTodo = filteredTodos[event.currentIndex];
+    const newIndex = fullTodos.findIndex((todo) => todo.id === targetTodo.id);
+
+    // Reorder in the full array
+    moveItemInArray(fullTodos, oldIndex, newIndex);
+    this.todos.set(fullTodos);
   }
 }

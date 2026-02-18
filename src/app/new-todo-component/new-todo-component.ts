@@ -36,6 +36,8 @@ export class NewTodoComponent {
     effect(() => {
       if (this.showAddTodo()) {
         this.dialog().nativeElement.showModal();
+      } else {
+        this.dialog().nativeElement.close();
       }
     });
   }

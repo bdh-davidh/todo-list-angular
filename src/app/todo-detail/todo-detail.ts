@@ -52,7 +52,7 @@ export class TodoDetail implements OnInit {
   updateTodos(todoForm: NgForm) {
     console.log(this.todoTitle());
     const updatedTodo: Todo = {
-      id: crypto.randomUUID(),
+      id: this.todoId(),
       user_id: todoForm.form.value.user_id,
       title: todoForm.form.value.title,
       description: todoForm.form.value.description,

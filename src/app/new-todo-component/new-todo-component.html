@@ -21,7 +21,7 @@
       ><span>User</span>
       <select name="user_id" id="users" ngModel required [class.input-error]="inputIsInvalid(todoForm, 'user_id')" >
         <option disabled selected value="">Select user</option>
-        @for (user of users; track $index) {
+        @for (user of users(); track $index) {
          <option value="{{ user.id }}">{{ user.name }}</option>
         }
       </select></label

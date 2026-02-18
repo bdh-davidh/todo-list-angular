@@ -49,7 +49,7 @@
       required
       [class.input-error]="inputIsInvalid(todoForm, 'user_id')"
     >
-      @for (user of users; track $index) {
+      @for (user of users(); track $index) {
         <option value="{{ user.id }}">{{ user.name }}</option>
       }
     </select></label

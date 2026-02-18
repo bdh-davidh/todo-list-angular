@@ -2,7 +2,7 @@
   <label for="users" class="visually-hidden">Select user</label>
   <select name="users" id="users" class="box" (change)="handleOnChange($event)">
     <option value="0">Everyone</option>
-    @for (userEntry of users; track $index) {
+    @for (userEntry of users(); track $index) {
       <option value="{{ userEntry.id }}">{{ userEntry.name }}</option>
     }
   </select>

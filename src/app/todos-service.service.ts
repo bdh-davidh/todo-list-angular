@@ -122,8 +122,4 @@ export class TodosService {
           },
         ];
   }
-
-  // defaultTodos = signal<Todo[]>([
-
-  // ]);
 }
